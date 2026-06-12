@@ -71,6 +71,8 @@ interface StoreValue {
   // order
   placeOrder: () => void;
   completeOrder: (orderId: string, rating: OrderRating) => void;
+  cancelOrder: (orderId: string) => void;
+  delayOrder: (orderId: string, extraMs: number) => void;
 }
 
 const StoreContext = createContext<StoreValue | null>(null);
@@ -337,6 +339,20 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     []
   );
 
+  const cancelOrder = useCallback((orderId: string) => {
+    setActiveOrders((prev) => prev.filter((o) => o.id !== orderId));
+  }, []);
+
+  const delayOrder = useCallback((orderId: string, extraMs: number) => {
+    setActiveOrders((prev) =>
+      prev.map((o) =>
+        o.id === orderId
+          ? { ...o, estimatedReadyAt: o.estimatedReadyAt + extraMs }
+          : o
+      )
+    );
+  }, []);
+
   const value: StoreValue = {
     hydrated,
     user,
@@ -370,6 +386,8 @@ export function StoreProvider({ children }: { children: React.ReactNode }) {
     clearCart,
     placeOrder,
     completeOrder,
+    cancelOrder,
+    delayOrder,
   };
 
   return <StoreContext.Provider value={value}>{children}</StoreContext.Provider>;

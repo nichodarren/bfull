@@ -6,6 +6,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import { CampusPill } from "../../components/CampusPill";
 import { FoodCard } from "../../components/FoodCard";
 import { OrderTracker } from "../../components/OrderTracker";
+import { QueueBoard } from "../../components/QueueBoard";
 import { CATEGORIES, MENU_ITEMS } from "../../lib/constants";
 import { useResponsive } from "../../lib/useResponsive";
 import { useStore } from "../../lib/store";
@@ -84,6 +85,9 @@ export default function Home() {
                 </Text>
               </View>
             )}
+
+            {/* Live canteen queue */}
+            <QueueBoard />
 
             {/* Search */}
             <View className="flex-row items-center gap-3 rounded-2xl bg-white px-4 shadow-sm">

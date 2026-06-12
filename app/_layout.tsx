@@ -4,6 +4,7 @@ import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import { GestureHandlerRootView } from "react-native-gesture-handler";
 import { SafeAreaProvider } from "react-native-safe-area-context";
+import { DelayModal } from "../components/DelayModal";
 import { ToastProvider } from "../components/Toast";
 import { StoreProvider } from "../lib/store";
 
@@ -40,6 +41,7 @@ export default function RootLayout() {
                 options={{ presentation: "transparentModal", animation: "fade" }}
               />
             </Stack>
+            <DelayModal />
           </ToastProvider>
         </StoreProvider>
       </SafeAreaProvider>

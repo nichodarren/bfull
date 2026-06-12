@@ -69,3 +69,14 @@ export interface User {
   studentId: string;
   phone?: string;
 }
+
+/** A canteen stall shown in the live "Antrian Kantin" queue board. */
+export interface QueueStall {
+  id: string;
+  name: string;
+  emoji: string;
+  /** Number of orders currently in the stall's queue. */
+  queue: number;
+  /** Average minutes each queued order adds to the wait. */
+  avgWaitPerOrder: number;
+}

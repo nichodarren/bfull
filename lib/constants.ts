@@ -1,4 +1,4 @@
-import type { Campus, Category, MenuItem, Tenant } from "./types";
+import type { Campus, Category, MenuItem, QueueStall, Tenant } from "./types";
 
 export const CATEGORIES: Category[] = [
   "All",
@@ -159,6 +159,18 @@ export const TENANTS: Tenant[] = [
     banner:
       "https://images.unsplash.com/photo-1567337710282-00832b415979?w=1200&q=80",
   },
+];
+
+/**
+ * Simulated live canteen queue shown in the "Antrian Kantin" board. In
+ * production this would stream from a realtime backend; here it fluctuates
+ * client-side every few seconds. Stalls map to real tenants above.
+ */
+export const CANTEEN_STALLS: QueueStall[] = [
+  { id: "rg", name: "Rasela Gourmet", emoji: "🍛", queue: 3, avgWaitPerOrder: 4 },
+  { id: "be", name: "Bakmie Effata", emoji: "🍜", queue: 11, avgWaitPerOrder: 5 },
+  { id: "sb", name: "Starbucks", emoji: "🥤", queue: 2, avgWaitPerOrder: 2 },
+  { id: "cc", name: "Cerita Cinta", emoji: "🔥", queue: 7, avgWaitPerOrder: 6 },
 ];
 
 export const MENU_ITEMS: MenuItem[] = [
