@@ -16,13 +16,13 @@ export default function Home() {
   const router = useRouter();
   const { user } = useStore();
   const { isWide, menuColumns } = useResponsive();
-  const [category, setCategory] = useState<Category>("All");
+  const [category, setCategory] = useState<Category>("Semua");
   const [query, setQuery] = useState("");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
     return MENU_ITEMS.filter((item) => {
-      const matchCat = category === "All" || item.category === category;
+      const matchCat = category === "Semua" || item.category === category;
       const matchSearch =
         !q ||
         item.name.toLowerCase().includes(q) ||
@@ -78,10 +78,10 @@ export default function Home() {
             {isWide && (
               <View className="mt-2">
                 <Text className="text-3xl font-black text-slate-900">
-                  Good day, {user?.name?.split(" ")[0] ?? "Student"} 👋
+                  Halo, {user?.name?.split(" ")[0] ?? "Mahasiswa"} 👋
                 </Text>
                 <Text className="mt-1 text-sm font-medium text-slate-500">
-                  Order ahead and skip the queue at kantin binus.
+                  Pesan lebih awal dan lewati antrean di kantin binus.
                 </Text>
               </View>
             )}
@@ -95,7 +95,7 @@ export default function Home() {
               <TextInput
                 value={query}
                 onChangeText={setQuery}
-                placeholder="Search queue-free meals..."
+                placeholder="Cari makanan tanpa antre..."
                 placeholderTextColor="#94a3b8"
                 className="flex-1 py-3.5 text-sm font-medium text-slate-900"
               />
@@ -131,10 +131,10 @@ export default function Home() {
 
             <View className="flex-row items-center justify-between">
               <Text className="text-xl font-black text-slate-800">
-                Available Foods
+                Makanan Tersedia
               </Text>
               <Text className="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-slate-500">
-                {filtered.length} items
+                {filtered.length} menu
               </Text>
             </View>
           </View>
@@ -153,16 +153,16 @@ export default function Home() {
         ListEmptyComponent={
           <View className="items-center gap-3 px-5 py-16">
             <Text className="text-base font-bold text-slate-500">
-              No meals match your search
+              Tidak ada menu yang cocok dengan pencarianmu
             </Text>
             <Pressable
               onPress={() => {
                 setQuery("");
-                setCategory("All");
+                setCategory("Semua");
               }}
             >
               <Text className="text-sm font-bold text-brand-600">
-                Reset filters
+                Atur ulang filter
               </Text>
             </Pressable>
           </View>

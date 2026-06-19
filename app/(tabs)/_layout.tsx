@@ -44,14 +44,14 @@ export default function TabsLayout() {
         <Tabs.Screen
           name="tenants"
           options={{
-            title: "Tenants",
+            title: "Tenant",
             tabBarIcon: ({ color, size }) => <Store color={color} size={size} />,
           }}
         />
         <Tabs.Screen
           name="cart"
           options={{
-            title: "Tray",
+            title: "Keranjang",
             tabBarBadge: cartCount > 0 ? cartCount : undefined,
             tabBarBadgeStyle: { backgroundColor: "#f97316", fontSize: 10 },
             tabBarIcon: ({ color, size }) => (
@@ -62,7 +62,7 @@ export default function TabsLayout() {
         <Tabs.Screen
           name="profile"
           options={{
-            title: "Profile",
+            title: "Profil",
             tabBarIcon: ({ color, size }) => <User color={color} size={size} />,
           }}
         />

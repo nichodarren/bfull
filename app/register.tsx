@@ -26,19 +26,19 @@ export default function Register() {
 
   function onSubmit() {
     if (!name.trim() || !nim.trim()) {
-      toast.show("Please complete your name and NIM.", "error");
+      toast.show("Lengkapi nama dan NIM kamu.", "error");
       return;
     }
     if (!email.includes("binus.ac.id")) {
-      toast.show("NIM verification failed. Must be @binus.ac.id", "error");
+      toast.show("Verifikasi NIM gagal. Harus @binus.ac.id", "error");
       return;
     }
     if (password.length < 4) {
-      toast.show("Password must be at least 4 characters.", "error");
+      toast.show("Kata sandi minimal 4 karakter.", "error");
       return;
     }
     login(email, name.trim(), nim.trim());
-    toast.show("Registration complete!");
+    toast.show("Pendaftaran selesai!");
     router.replace("/(tabs)");
   }
 
@@ -63,30 +63,30 @@ export default function Register() {
               <GraduationCap color="#fff" size={30} />
             </LinearGradient>
             <Text className="text-3xl font-black tracking-tight text-slate-900">
-              Create Account
+              Buat Akun
             </Text>
             <Text className="mt-1 text-sm font-medium text-slate-500">
-              Join bfull with your student identity
+              Gabung bfull dengan identitas mahasiswamu
             </Text>
           </View>
 
           <View className="rounded-3xl border border-slate-100 bg-white p-7 shadow-sm">
             <Field
-              label="Full Name"
+              label="Nama Lengkap"
               icon={<User color="#94a3b8" size={18} />}
               value={name}
               onChangeText={setName}
               placeholder="Alex Chandra"
             />
             <Field
-              label="Student NIM / ID"
+              label="NIM Mahasiswa"
               icon={<Hash color="#94a3b8" size={18} />}
               value={nim}
               onChangeText={setNim}
               placeholder="2502461183"
             />
             <Field
-              label="University Email"
+              label="Email Universitas"
               icon={<Mail color="#94a3b8" size={18} />}
               value={email}
               onChangeText={setEmail}
@@ -94,7 +94,7 @@ export default function Register() {
               keyboardType="email-address"
             />
             <Field
-              label="Password"
+              label="Kata Sandi"
               icon={<Lock color="#94a3b8" size={18} />}
               value={password}
               onChangeText={setPassword}
@@ -113,7 +113,7 @@ export default function Register() {
               >
                 <View className="w-full items-center py-4">
                   <Text className="text-sm font-bold tracking-wide text-white">
-                    Register Account
+                    Daftar Akun
                   </Text>
                 </View>
               </LinearGradient>
@@ -122,11 +122,11 @@ export default function Register() {
 
           <View className="mt-6 flex-row justify-center">
             <Text className="text-sm font-medium text-slate-500">
-              Already have an account?{" "}
+              Sudah punya akun?{" "}
             </Text>
             <Link href="/login" asChild>
               <Pressable>
-                <Text className="text-sm font-bold text-brand-600">Login</Text>
+                <Text className="text-sm font-bold text-brand-600">Masuk</Text>
               </Pressable>
             </Link>
           </View>

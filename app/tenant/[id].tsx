@@ -16,12 +16,12 @@ export default function TenantDetail() {
   const { id } = useLocalSearchParams<{ id: string }>();
   const router = useRouter();
   const { menuColumns } = useResponsive();
-  const [category, setCategory] = useState<Category>("All");
+  const [category, setCategory] = useState<Category>("Semua");
 
   const tenant = getTenant(id);
   const items = useMemo(() => {
     const all = tenant ? tenantItems(tenant.id) : [];
-    return category === "All"
+    return category === "Semua"
       ? all
       : all.filter((i) => i.category === category);
   }, [tenant, category]);
@@ -30,7 +30,7 @@ export default function TenantDetail() {
     const present = new Set(
       (tenant ? tenantItems(tenant.id) : []).map((i) => i.category)
     );
-    return CATEGORIES.filter((c) => c === "All" || present.has(c));
+    return CATEGORIES.filter((c) => c === "Semua" || present.has(c));
   }, [tenant]);
 
   const gridData = useMemo(() => {
@@ -46,7 +46,7 @@ export default function TenantDetail() {
   if (!tenant) {
     return (
       <SafeAreaView className="flex-1 items-center justify-center bg-white">
-        <Text className="text-slate-500">Tenant not found.</Text>
+        <Text className="text-slate-500">Tenant tidak ditemukan.</Text>
       </SafeAreaView>
     );
   }
@@ -79,7 +79,7 @@ export default function TenantDetail() {
               <SafeAreaView edges={["top"]} className="absolute left-0 top-0">
                 <Pressable
                   onPress={() => router.back()}
-                  accessibilityLabel="Go back"
+                  accessibilityLabel="Kembali"
                   className="m-4 h-9 w-9 items-center justify-center rounded-full bg-black/40 active:bg-black/60"
                 >
                   <ChevronLeft color="#fff" size={22} />
@@ -113,7 +113,7 @@ export default function TenantDetail() {
                   <View className="flex-row items-center gap-1">
                     <Clock color="#94a3b8" size={13} />
                     <Text className="text-xs font-semibold text-slate-500">
-                      {tenant.etaMin} min
+                      {tenant.etaMin} mnt
                     </Text>
                   </View>
                   <Text className="text-xs font-semibold text-slate-500">

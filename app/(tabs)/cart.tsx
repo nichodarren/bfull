@@ -31,11 +31,11 @@ export default function Cart() {
     <SafeAreaView className="flex-1 bg-slate-50" edges={isWide ? [] : ["top"]}>
       <View className="border-b border-slate-100 bg-white">
         <View style={CENTER} className="px-5 py-4">
-          <Text className="text-xl font-black text-slate-900">Your Tray</Text>
+          <Text className="text-xl font-black text-slate-900">Keranjangmu</Text>
           <Text className="text-xs font-medium text-slate-500">
             {cart.length === 0
-              ? "Add meals to start an order"
-              : `${cart.length} item${cart.length > 1 ? "s" : ""} ready to lock`}
+              ? "Tambahkan menu untuk mulai memesan"
+              : `${cart.length} item siap dipesan`}
           </Text>
         </View>
       </View>
@@ -46,13 +46,13 @@ export default function Cart() {
             <ShoppingBag color="#cbd5e1" size={36} />
           </View>
           <Text className="text-sm font-semibold text-slate-400">
-            Your tray is currently empty.
+            Keranjangmu masih kosong.
           </Text>
           <Pressable
             onPress={() => router.push("/(tabs)")}
             className="rounded-xl bg-brand-500 px-6 py-3 active:opacity-90"
           >
-            <Text className="text-sm font-bold text-white">Browse Menu</Text>
+            <Text className="text-sm font-bold text-white">Lihat Menu</Text>
           </Pressable>
         </View>
       ) : (
@@ -77,7 +77,7 @@ export default function Cart() {
                     {tenant.name}
                   </Text>
                   <Text className="text-xs font-medium text-slate-400">
-                    Pickup order · ~{tenant.etaMin} min
+                    Pesanan ambil sendiri · ~{tenant.etaMin} mnt
                   </Text>
                 </View>
               </View>
@@ -146,7 +146,7 @@ export default function Cart() {
               <View className="flex-row items-center gap-2">
                 <Tag color="#f97316" size={15} />
                 <Text className="text-xs font-bold uppercase tracking-wider text-slate-500">
-                  Vouchers
+                  Voucher
                 </Text>
               </View>
               <ScrollView
@@ -193,7 +193,7 @@ export default function Cart() {
                 {discount > 0 && (
                   <View className="flex-row items-center justify-between">
                     <Text className="text-sm font-semibold text-emerald-600">
-                      Voucher discount
+                      Diskon voucher
                     </Text>
                     <Text className="text-sm font-bold text-emerald-600">
                       −{formatRupiah(discount)}
@@ -215,7 +215,7 @@ export default function Cart() {
                 className="items-center rounded-2xl bg-slate-900 py-4 active:opacity-90"
               >
                 <Text className="text-sm font-bold uppercase tracking-wide text-white">
-                  Proceed &amp; Lock Order
+                  Lanjut &amp; Kunci Pesanan
                 </Text>
               </Pressable>
             </View>

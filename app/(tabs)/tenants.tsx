@@ -30,7 +30,7 @@ export default function Tenants() {
     <SafeAreaView className="flex-1 bg-slate-50" edges={isWide ? [] : ["top"]}>
       {!isWide && (
         <View className="flex-row items-center justify-between border-b border-slate-100 bg-white px-5 py-3">
-          <Text className="text-xl font-black text-slate-900">Tenants</Text>
+          <Text className="text-xl font-black text-slate-900">Tenant</Text>
           <CampusPill compact />
         </View>
       )}
@@ -49,10 +49,10 @@ export default function Tenants() {
             {isWide && (
               <View>
                 <Text className="text-3xl font-black text-slate-900">
-                  Browse tenants
+                  Jelajahi tenant
                 </Text>
                 <Text className="mt-1 text-sm font-medium text-slate-500">
-                  Pick a stall, then explore its menu.
+                  Pilih kedai, lalu telusuri menunya.
                 </Text>
               </View>
             )}
@@ -61,7 +61,7 @@ export default function Tenants() {
               <TextInput
                 value={query}
                 onChangeText={setQuery}
-                placeholder="Search tenants or cuisine..."
+                placeholder="Cari tenant atau jenis masakan..."
                 placeholderTextColor="#94a3b8"
                 className="flex-1 py-3.5 text-sm font-medium text-slate-900"
               />

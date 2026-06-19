@@ -27,23 +27,23 @@ export default function Login() {
 
   function onSubmit() {
     if (!email.includes("binus.ac.id")) {
-      toast.show("Please use a valid @binus.ac.id email!", "error");
+      toast.show("Gunakan email @binus.ac.id yang valid!", "error");
       return;
     }
     if (password.length < 4) {
-      toast.show("Password must be at least 4 characters.", "error");
+      toast.show("Kata sandi minimal 4 karakter.", "error");
       return;
     }
     login(email);
-    toast.show("Signed in successfully!");
+    toast.show("Berhasil masuk!");
     router.replace("/(tabs)");
   }
 
   function useDemo() {
     setEmail(DEMO_EMAIL);
     setPassword(DEMO_PASSWORD);
-    login(DEMO_EMAIL, "Demo Student", "2502461183");
-    toast.show("Logged in with demo account");
+    login(DEMO_EMAIL, "Mahasiswa Demo", "2502461183");
+    toast.show("Masuk dengan akun demo");
     router.replace("/(tabs)");
   }
 
@@ -81,17 +81,17 @@ export default function Login() {
                   </View>
                   <View className="gap-4">
                     <Text className="text-4xl font-black leading-tight text-white">
-                      Skip the queue.{"\n"}Enjoy instant food.
+                      Lewati antrean.{"\n"}Nikmati makanan instan.
                     </Text>
                     <Text className="text-base font-medium leading-6 text-orange-50">
-                      Order ahead at kantin binus, pay cashless, and track your
-                      meal in real time — pick it up the moment it&apos;s ready.
+                      Pesan lebih awal di kantin binus, bayar nontunai, dan lacak
+                      pesananmu secara real-time — ambil begitu siap.
                     </Text>
                     <View className="mt-2 gap-2">
                       {[
-                        "Real-time order tracking",
-                        "Cashless QRIS payment",
-                        "No more waiting in line",
+                        "Pelacakan pesanan real-time",
+                        "Pembayaran QRIS nontunai",
+                        "Tak perlu antre lagi",
                       ].map((t) => (
                         <View key={t} className="flex-row items-center gap-2">
                           <View className="h-1.5 w-1.5 rounded-full bg-white" />
@@ -103,7 +103,7 @@ export default function Login() {
                     </View>
                   </View>
                   <Text className="text-xs font-medium text-orange-100">
-                    Human &amp; Computer Interaction · BINUS University
+                    Interaksi Manusia &amp; Komputer · BINUS University
                   </Text>
                 </View>
               </LinearGradient>
@@ -126,7 +126,7 @@ export default function Login() {
                     bfull
                   </Text>
                   <Text className="mt-1 text-sm font-medium text-slate-500">
-                    Skip the queue, enjoy instant food at{" "}
+                    Lewati antrean, nikmati makanan instan di{" "}
                     <Text className="font-semibold text-brand-500">
                       kantin binus
                     </Text>
@@ -142,11 +142,11 @@ export default function Login() {
                 }
               >
                 <Text className="mb-5 text-2xl font-bold text-slate-800">
-                  Sign In
+                  Masuk
                 </Text>
 
                 <Field
-                  label="Student Email"
+                  label="Email Mahasiswa"
                   icon={<Mail color="#94a3b8" size={18} />}
                   value={email}
                   onChangeText={setEmail}
@@ -154,7 +154,7 @@ export default function Login() {
                   keyboardType="email-address"
                 />
                 <Field
-                  label="Password"
+                  label="Kata Sandi"
                   icon={<Lock color="#94a3b8" size={18} />}
                   value={password}
                   onChangeText={setPassword}
@@ -173,7 +173,7 @@ export default function Login() {
                   >
                     <View className="w-full items-center py-4">
                       <Text className="text-sm font-bold tracking-wide text-white">
-                        Enter App
+                        Masuk Aplikasi
                       </Text>
                     </View>
                   </LinearGradient>
@@ -181,21 +181,21 @@ export default function Login() {
 
                 <Pressable onPress={useDemo} className="mt-3 items-center py-3">
                   <Text className="text-sm font-semibold text-slate-500">
-                    Try the{" "}
+                    Coba{" "}
                     <Text className="font-bold text-brand-600">
-                      demo account
+                      akun demo
                     </Text>
                   </Text>
                 </Pressable>
 
                 <View className="mt-4 flex-row justify-center">
                   <Text className="text-sm font-medium text-slate-500">
-                    Don&apos;t have an account?{" "}
+                    Belum punya akun?{" "}
                   </Text>
                   <Link href="/register" asChild>
                     <Pressable>
                       <Text className="text-sm font-bold text-brand-600">
-                        Register
+                        Daftar
                       </Text>
                     </Pressable>
                   </Link>

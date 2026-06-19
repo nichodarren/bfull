@@ -33,7 +33,7 @@ export default function CustomizeFood() {
   if (!item) {
     return (
       <View className="flex-1 items-center justify-center bg-white">
-        <Text className="text-slate-500">Item not found.</Text>
+        <Text className="text-slate-500">Menu tidak ditemukan.</Text>
       </View>
     );
   }
@@ -44,14 +44,14 @@ export default function CustomizeFood() {
       return;
     }
     addToCart(item!, note.trim());
-    toast.show("Meal loaded into your tray");
+    toast.show("Menu ditambahkan ke keranjang");
     router.back();
   }
 
   function startNew() {
     startNewOrderWith(item!, note.trim());
     setConflict(false);
-    toast.show("New order started");
+    toast.show("Pesanan baru dimulai");
     router.back();
   }
 
@@ -118,8 +118,8 @@ export default function CustomizeFood() {
             <View className="flex-row gap-3">
               <Stat
                 icon={<Clock color="#f97316" size={16} />}
-                label="Prep"
-                value={`${item.prepTime} min`}
+                label="Persiapan"
+                value={`${item.prepTime} mnt`}
               />
               <Stat
                 icon={<Star color="#fbbf24" size={16} fill="#fbbf24" />}
@@ -128,7 +128,7 @@ export default function CustomizeFood() {
               />
               <Stat
                 icon={<Flame color="#ef4444" size={16} />}
-                label="Calories"
+                label="Kalori"
                 value={`${item.calories}`}
               />
             </View>
@@ -136,13 +136,13 @@ export default function CustomizeFood() {
             {/* Customization */}
             <View className="gap-3">
               <Text className="text-sm font-bold text-slate-800">
-                Customizations
+                Kustomisasi
               </Text>
               <TextInput
                 value={note}
                 onChangeText={setNote}
                 multiline
-                placeholder="E.g., No spicy chili, extra egg, remove onion..."
+                placeholder="Mis., tidak pedas, tambah telur, tanpa bawang..."
                 placeholderTextColor="#94a3b8"
                 className="min-h-[110px] rounded-2xl bg-slate-50 p-4 text-sm font-medium text-slate-700"
                 textAlignVertical="top"
@@ -164,7 +164,7 @@ export default function CustomizeFood() {
             >
               <View className="w-full items-center py-4">
                 <Text className="text-sm font-bold uppercase tracking-wide text-white">
-                  Add to Tray · {formatRupiah(item.price)}
+                  Tambah ke Keranjang · {formatRupiah(item.price)}
                 </Text>
               </View>
             </LinearGradient>
@@ -177,15 +177,15 @@ export default function CustomizeFood() {
         <View className="absolute inset-0 items-center justify-center bg-slate-900/60 p-6">
           <View className="w-full max-w-sm gap-4 rounded-3xl bg-white p-6">
             <Text className="text-lg font-black text-slate-900">
-              Start a new order?
+              Mulai pesanan baru?
             </Text>
             <Text className="text-sm leading-6 text-slate-500">
-              Your tray already has items from{" "}
+              Keranjangmu sudah berisi menu dari{" "}
               <Text className="font-bold text-slate-700">
                 {currentTenant?.name}
               </Text>
-              . You can only order from one tenant at a time. Starting a new
-              order will clear your current tray.
+              . Kamu hanya bisa memesan dari satu tenant dalam satu waktu.
+              Memulai pesanan baru akan mengosongkan keranjangmu saat ini.
             </Text>
             <View className="mt-1 gap-2">
               <Pressable
@@ -193,7 +193,7 @@ export default function CustomizeFood() {
                 className="items-center rounded-xl bg-brand-500 py-3.5 active:opacity-90"
               >
                 <Text className="text-sm font-bold text-white">
-                  Start new order with {tenant?.name}
+                  Mulai pesanan baru dengan {tenant?.name}
                 </Text>
               </Pressable>
               <Pressable
@@ -201,7 +201,7 @@ export default function CustomizeFood() {
                 className="items-center py-2.5"
               >
                 <Text className="text-sm font-semibold text-slate-500">
-                  Keep current tray
+                  Pertahankan keranjang
                 </Text>
               </Pressable>
             </View>

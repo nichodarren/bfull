@@ -6,9 +6,9 @@ import { CampusPill } from "./CampusPill";
 
 const LINKS = [
   { href: "/", label: "Menu", Icon: Home },
-  { href: "/tenants", label: "Tenants", Icon: Store },
-  { href: "/cart", label: "Tray", Icon: ShoppingBag },
-  { href: "/profile", label: "Profile", Icon: User },
+  { href: "/tenants", label: "Tenant", Icon: Store },
+  { href: "/cart", label: "Keranjang", Icon: ShoppingBag },
+  { href: "/profile", label: "Profil", Icon: User },
 ] as const;
 
 /** Top navigation bar shown on web (desktop/tablet) in place of bottom tabs. */

@@ -1,4 +1,4 @@
-export type Category = "All" | "Main Course" | "Snacks" | "Drinks" | "Healthy";
+export type Category = "Semua" | "Makanan Utama" | "Camilan" | "Minuman" | "Sehat";
 
 export interface Campus {
   id: string;
@@ -29,7 +29,7 @@ export interface MenuItem {
   /** Price in IDR (Rupiah). */
   price: number;
   image: string;
-  category: Exclude<Category, "All">;
+  category: Exclude<Category, "Semua">;
   prepTime: number;
   rating: number;
   calories: number;

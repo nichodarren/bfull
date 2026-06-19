@@ -13,14 +13,14 @@ export function CampusPill({ compact = false }: { compact?: boolean }) {
   return (
     <Pressable
       onPress={() => router.push("/campus")}
-      accessibilityLabel="Change campus"
+      accessibilityLabel="Ganti kampus"
       className="flex-row items-center gap-1.5 rounded-full bg-slate-100 px-3 py-1.5 active:bg-slate-200"
     >
       <MapPin color="#f97316" size={13} />
       <View>
         {!compact && (
           <Text className="text-[9px] font-semibold uppercase tracking-wider text-slate-400">
-            Pickup at
+            Ambil di
           </Text>
         )}
         <Text className="text-xs font-bold text-slate-700">{campus.name}</Text>

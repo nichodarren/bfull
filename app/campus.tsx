@@ -14,10 +14,10 @@ export default function CampusPicker() {
         <View className="flex-row items-center justify-between border-b border-slate-100 px-6 py-4">
           <View>
             <Text className="text-lg font-black text-slate-900">
-              Choose your campus
+              Pilih kampusmu
             </Text>
             <Text className="text-xs font-medium text-slate-500">
-              Pick where you&apos;ll grab your order
+              Pilih tempat kamu mengambil pesanan
             </Text>
           </View>
           <Pressable onPress={() => router.back()} className="p-1">

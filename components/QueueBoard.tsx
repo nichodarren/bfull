@@ -6,12 +6,12 @@ import type { QueueStall } from "../lib/types";
 /** Map a queue length to a coloured status label, mirroring the web build. */
 function queueLabel(count: number) {
   if (count <= 0)
-    return { text: "Quiet", color: "text-emerald-600", bg: "bg-emerald-50", dot: "bg-emerald-400", bar: "bg-emerald-400" };
+    return { text: "Sepi", color: "text-emerald-600", bg: "bg-emerald-50", dot: "bg-emerald-400", bar: "bg-emerald-400" };
   if (count <= 4)
-    return { text: "Light Queue", color: "text-emerald-600", bg: "bg-emerald-50", dot: "bg-emerald-400", bar: "bg-emerald-400" };
+    return { text: "Antrean Sedikit", color: "text-emerald-600", bg: "bg-emerald-50", dot: "bg-emerald-400", bar: "bg-emerald-400" };
   if (count <= 8)
-    return { text: "Busy", color: "text-amber-600", bg: "bg-amber-50", dot: "bg-amber-400", bar: "bg-amber-400" };
-  return { text: "Very crowded", color: "text-red-600", bg: "bg-red-50", dot: "bg-red-500", bar: "bg-red-500" };
+    return { text: "Ramai", color: "text-amber-600", bg: "bg-amber-50", dot: "bg-amber-400", bar: "bg-amber-400" };
+  return { text: "Sangat Padat", color: "text-red-600", bg: "bg-red-50", dot: "bg-red-500", bar: "bg-red-500" };
 }
 
 /**
@@ -83,10 +83,10 @@ export function QueueBoard() {
 
               <View className="flex-row items-center justify-between">
                 <Text className="text-xs font-medium text-slate-500">
-                  {stall.queue} Active Orders
+                  {stall.queue} Pesanan Aktif
                 </Text>
                 <Text className="text-xs font-medium text-slate-500">
-                  ~{waitMin} min
+                  ~{waitMin} mnt
                 </Text>
               </View>
 

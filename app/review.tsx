@@ -34,13 +34,13 @@ export default function Review() {
 
   function submit() {
     if (rating === 0) {
-      toast.show("Please select a star rating first!", "error");
+      toast.show("Pilih rating bintang terlebih dahulu!", "error");
       return;
     }
     if (order) {
       completeOrder(order.id, { stars: rating, tags, comment: comment.trim() });
     }
-    toast.show("Thank you for improving bfull!");
+    toast.show("Terima kasih telah membantu bfull jadi lebih baik!");
     router.dismissAll();
     router.replace("/(tabs)");
   }
@@ -57,12 +57,12 @@ export default function Review() {
 
         <View className="items-center gap-1">
           <Text className="text-center text-2xl font-black text-slate-900">
-            Yum! Order Picked Up
+            Mantap! Pesanan Diambil
           </Text>
           <Text className="text-center text-sm font-medium text-slate-500">
-            How was your experience with{" "}
+            Bagaimana pengalamanmu dengan{" "}
             <Text className="font-bold text-slate-700">
-              {tenant?.name ?? "this tenant"}
+              {tenant?.name ?? "tenant ini"}
             </Text>
             ?
           </Text>
@@ -111,7 +111,7 @@ export default function Review() {
           value={comment}
           onChangeText={setComment}
           multiline
-          placeholder="Add a comment (optional)"
+          placeholder="Tambahkan komentar (opsional)"
           placeholderTextColor="#94a3b8"
           className="min-h-[80px] w-full rounded-2xl bg-slate-50 p-4 text-sm font-medium text-slate-700"
           textAlignVertical="top"
@@ -122,7 +122,7 @@ export default function Review() {
           className="w-full items-center rounded-xl bg-brand-500 py-4 active:opacity-90"
         >
           <Text className="text-sm font-bold uppercase tracking-wide text-white">
-            Submit Rating
+            Kirim Penilaian
           </Text>
         </Pressable>
       </View>

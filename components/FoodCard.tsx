@@ -34,7 +34,7 @@ export function FoodCard({
         <View className="absolute right-3 top-3 flex-row items-center gap-1 rounded-full bg-white/95 px-2.5 py-1 shadow-sm">
           <Clock color="#f97316" size={13} />
           <Text className="text-[11px] font-black text-slate-800">
-            {item.prepTime} min
+            {item.prepTime} mnt
           </Text>
         </View>
         <View className="absolute left-3 top-3 flex-row items-center gap-1 rounded-full bg-slate-900/80 px-2.5 py-1">
@@ -45,7 +45,7 @@ export function FoodCard({
         </View>
         <Pressable
           onPress={() => toggleFavorite(item.id)}
-          accessibilityLabel={fav ? "Remove from favorites" : "Add to favorites"}
+          accessibilityLabel={fav ? "Hapus dari favorit" : "Tambah ke favorit"}
           className="absolute bottom-3 right-3 h-8 w-8 items-center justify-center rounded-full bg-white/95 shadow-sm active:opacity-80"
         >
           <Heart

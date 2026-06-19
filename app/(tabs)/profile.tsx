@@ -58,11 +58,11 @@ export default function Profile() {
 
   function save() {
     if (!name.trim() || !email.includes("binus.ac.id")) {
-      toast.show("Name and a valid @binus.ac.id email are required.", "error");
+      toast.show("Nama dan email @binus.ac.id yang valid wajib diisi.", "error");
       return;
     }
     updateProfile({ name: name.trim(), email: email.trim(), phone: phone.trim() });
-    toast.show("Profile information saved!");
+    toast.show("Informasi profil tersimpan!");
   }
 
   return (
@@ -70,7 +70,7 @@ export default function Profile() {
       <View className="border-b border-slate-100 bg-white">
         <View style={CENTER} className="px-5 py-4">
           <Text className="text-xl font-black text-slate-900">
-            Student Profile
+            Profil Mahasiswa
           </Text>
         </View>
       </View>
@@ -112,25 +112,25 @@ export default function Profile() {
                 <Text className="text-sm font-bold text-white">bfull Pay</Text>
               </View>
               <Pressable
-                onPress={() => toast.show("Top-up is coming soon", "info")}
+                onPress={() => toast.show("Isi saldo segera hadir", "info")}
                 className="flex-row items-center gap-1 rounded-full bg-white/15 px-3 py-1.5 active:opacity-80"
               >
                 <Plus color="#fff" size={14} strokeWidth={3} />
-                <Text className="text-xs font-bold text-white">Top Up</Text>
+                <Text className="text-xs font-bold text-white">Isi Saldo</Text>
               </Pressable>
             </View>
             <View>
               <Text className="text-[11px] font-medium text-slate-400">
-                Balance
+                Saldo
               </Text>
               <Text className="text-2xl font-black text-white">
                 {formatRupiah(walletBalance)}
               </Text>
             </View>
             <View className="flex-row gap-3 border-t border-white/10 pt-3">
-              <Stat label="Points" value={`${points}`} />
-              <Stat label="Orders" value={`${orderHistory.length}`} />
-              <Stat label="Min. saved" value={`${minutesSaved}`} />
+              <Stat label="Poin" value={`${points}`} />
+              <Stat label="Pesanan" value={`${orderHistory.length}`} />
+              <Stat label="Menit hemat" value={`${minutesSaved}`} />
             </View>
           </View>
 
@@ -138,21 +138,21 @@ export default function Profile() {
           <View className="overflow-hidden rounded-2xl border border-slate-100 bg-white">
             <Row
               icon={<ClipboardList color="#ea580c" size={18} />}
-              label="Order History"
+              label="Riwayat Pesanan"
               meta={`${orderHistory.length}`}
               onPress={() => router.push("/orders")}
             />
             <Divider />
             <Row
               icon={<Heart color="#ef4444" size={18} />}
-              label="Favorites"
+              label="Favorit"
               meta={`${favorites.length}`}
               onPress={() => router.push("/favorites")}
             />
             <Divider />
             <Row
               icon={<Ticket color="#f59e0b" size={18} />}
-              label="My Vouchers"
+              label="Voucher Saya"
               meta="3"
               onPress={() => router.push("/vouchers")}
             />
@@ -163,7 +163,7 @@ export default function Profile() {
             <View className="flex-row items-center gap-3 px-4 py-3.5">
               <Clock color="#64748b" size={18} />
               <Text className="flex-1 text-sm font-bold text-slate-700">
-                Push notifications
+                Notifikasi push
               </Text>
               <Switch
                 value={notifications}
@@ -175,15 +175,15 @@ export default function Profile() {
             <Divider />
             <Row
               icon={<HelpCircle color="#64748b" size={18} />}
-              label="Help & Support"
-              onPress={() => toast.show("Reach us at help@bfull.app", "info")}
+              label="Bantuan & Dukungan"
+              onPress={() => toast.show("Hubungi kami di help@bfull.app", "info")}
             />
             <Divider />
             <Row
               icon={<Info color="#64748b" size={18} />}
-              label="About bfull"
+              label="Tentang bfull"
               onPress={() =>
-                toast.show("bfull v1.0 · HCI Project · BINUS", "info")
+                toast.show("bfull v1.0 · Proyek HCI · BINUS", "info")
               }
             />
           </View>
@@ -191,17 +191,17 @@ export default function Profile() {
           {/* Account details (editable) */}
           <View className="gap-4 rounded-2xl border border-slate-100 bg-white p-5">
             <Text className="text-sm font-black text-slate-800">
-              Account Details
+              Detail Akun
             </Text>
-            <ProfileField label="Full Name" value={name} onChangeText={setName} />
+            <ProfileField label="Nama Lengkap" value={name} onChangeText={setName} />
             <ProfileField
-              label="Student Email"
+              label="Email Mahasiswa"
               value={email}
               onChangeText={setEmail}
               keyboardType="email-address"
             />
             <ProfileField
-              label="Phone Contact"
+              label="Nomor Telepon"
               value={phone}
               onChangeText={setPhone}
               placeholder="+62 812-3456-7890"
@@ -212,7 +212,7 @@ export default function Profile() {
             >
               <ShieldCheck color="#fff" size={18} />
               <Text className="text-sm font-bold text-white">
-                Save Information
+                Simpan Informasi
               </Text>
             </Pressable>
           </View>
@@ -223,12 +223,12 @@ export default function Profile() {
           >
             <LogOut color="#dc2626" size={18} />
             <Text className="text-sm font-bold text-red-600">
-              Logout Student Profile
+              Keluar dari Profil
             </Text>
           </Pressable>
 
           <Text className="pb-2 text-center text-[11px] font-medium text-slate-400">
-            bfull · University Order-Ahead Canteen{"\n"}Skip the queue at kantin
+            bfull · Kantin Kampus Pesan-Lebih-Awal{"\n"}Lewati antrean di kantin
             binus
           </Text>
         </ScrollView>

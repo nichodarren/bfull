@@ -48,14 +48,14 @@ export function TenantCard({ tenant }: { tenant: Tenant }) {
             <View className="flex-row items-center gap-1">
               <Clock color="#94a3b8" size={13} />
               <Text className="text-xs font-semibold text-slate-500">
-                {tenant.etaMin} min
+                {tenant.etaMin} mnt
               </Text>
             </View>
             <Text className="text-xs font-semibold text-slate-500">
               {"Rp".repeat(tenant.priceLevel)}
             </Text>
             <Text className="text-xs font-semibold text-slate-400">
-              · {count} items
+              · {count} menu
             </Text>
           </View>
         </View>

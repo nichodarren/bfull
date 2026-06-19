@@ -15,10 +15,10 @@ export default function Orders() {
   return (
     <SafeAreaView className="flex-1 bg-slate-50" edges={["top"]}>
       <View className="flex-row items-center gap-2 border-b border-slate-100 bg-white px-4 py-3">
-        <Pressable onPress={() => router.back()} className="p-1" accessibilityLabel="Go back">
+        <Pressable onPress={() => router.back()} className="p-1" accessibilityLabel="Kembali">
           <ChevronLeft color="#0f172a" size={24} />
         </Pressable>
-        <Text className="text-lg font-black text-slate-900">Order History</Text>
+        <Text className="text-lg font-black text-slate-900">Riwayat Pesanan</Text>
       </View>
 
       {orderHistory.length === 0 ? (
@@ -27,7 +27,7 @@ export default function Orders() {
             <ClipboardList color="#cbd5e1" size={34} />
           </View>
           <Text className="text-sm font-semibold text-slate-400">
-            No past orders yet.
+            Belum ada pesanan sebelumnya.
           </Text>
         </View>
       ) : (
@@ -81,7 +81,7 @@ export default function Orders() {
 
                 <View className="flex-row items-center justify-between border-t border-slate-100 pt-2">
                   <Text className="text-xs font-bold uppercase tracking-wider text-emerald-600">
-                    Picked up
+                    Telah diambil
                   </Text>
                   <Text className="text-sm font-black text-slate-900">
                     {formatRupiah(o.total)}

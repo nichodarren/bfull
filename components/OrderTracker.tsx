@@ -8,9 +8,9 @@ import { useStore } from "../lib/store";
 import type { ActiveOrder } from "../lib/types";
 
 const STEPS = [
-  { key: "Confirmed", label: "Confirmed", Icon: CircleCheck },
-  { key: "Cooking", label: "Cooking", Icon: ChefHat },
-  { key: "Ready", label: "Ready", Icon: Bell },
+  { key: "Confirmed", label: "Dikonfirmasi", Icon: CircleCheck },
+  { key: "Cooking", label: "Dimasak", Icon: ChefHat },
+  { key: "Ready", label: "Siap", Icon: Bell },
 ] as const;
 
 const META: Record<
@@ -19,20 +19,20 @@ const META: Record<
 > = {
   Confirmed: {
     progress: "33%",
-    title: "Paid & Confirmed",
-    desc: "The kitchen is preparing to cook your priority order.",
+    title: "Dibayar & Dikonfirmasi",
+    desc: "Dapur sedang bersiap memasak pesanan prioritasmu.",
     stepIndex: 0,
   },
   Cooking: {
     progress: "66%",
-    title: "Cooking in Progress",
-    desc: "Your queue-free lunch is sizzling on the stove.",
+    title: "Sedang Dimasak",
+    desc: "Makan siang tanpa antremu sedang dimasak di dapur.",
     stepIndex: 1,
   },
   Ready: {
     progress: "100%",
-    title: "Ready for Pickup",
-    desc: "Skip the lines! Your food is waiting under the warmers.",
+    title: "Siap Diambil",
+    desc: "Tanpa antre! Makananmu menunggu di bawah penghangat.",
     stepIndex: 2,
   },
 };
@@ -45,7 +45,7 @@ export function OrderTracker() {
     <View className="gap-4">
       {activeOrders.length > 1 && (
         <Text className="text-xs font-bold uppercase tracking-wider text-slate-500">
-          {activeOrders.length} active orders
+          {activeOrders.length} pesanan aktif
         </Text>
       )}
       {activeOrders.map((order) => (
@@ -71,14 +71,14 @@ function OrderBanner({ order }: { order: ActiveOrder }) {
         <View className="mb-5 flex-row items-start justify-between gap-4">
           <View className="flex-1">
             <Text className="mb-1 text-[11px] font-semibold uppercase tracking-wider text-orange-100">
-              {tenant?.name ?? "Order"} · #{order.id}
+              {tenant?.name ?? "Pesanan"} · #{order.id}
             </Text>
             <Text className="text-2xl font-black text-white">{meta.title}</Text>
             <Text className="mt-1 text-sm text-orange-100">{meta.desc}</Text>
           </View>
           <View className="rounded-2xl border border-white/10 bg-white/15 px-4 py-3">
             <Text className="text-[10px] font-medium text-orange-100">
-              Est. Pickup
+              Estimasi Ambil
             </Text>
             <Text className="mt-0.5 text-lg font-black text-white">
               {formatClock(order.estimatedReadyAt)}
@@ -130,7 +130,7 @@ function OrderBanner({ order }: { order: ActiveOrder }) {
             className="mt-5 items-center rounded-xl bg-white py-3 active:opacity-90"
           >
             <Text className="text-sm font-bold text-brand-600">
-              Mark as Picked Up
+              Tandai Sudah Diambil
             </Text>
           </Pressable>
         )}

@@ -23,7 +23,7 @@ export default function Payment() {
 
   function onSuccess() {
     placeOrder();
-    toast.show("Payment successful! Priority queue locked");
+    toast.show("Pembayaran berhasil! Antrean prioritas terkunci");
     router.dismissAll();
     router.replace("/(tabs)");
   }
@@ -34,10 +34,10 @@ export default function Payment() {
         <View className="flex-row items-start justify-between">
           <View className="flex-1">
             <Text className="text-xl font-black text-slate-900">
-              Cashless Payment
+              Pembayaran Nontunai
             </Text>
             <Text className="mt-0.5 text-xs font-medium text-slate-500">
-              Scan to auto-verify your order instantly.
+              Pindai untuk verifikasi pesananmu secara instan.
             </Text>
           </View>
           <Pressable onPress={() => router.back()} className="p-1">
@@ -48,7 +48,7 @@ export default function Payment() {
         {/* Amount */}
         <View className="flex-row items-center justify-between rounded-2xl bg-brand-50 px-4 py-3">
           <Text className="text-[11px] font-extrabold uppercase tracking-wider text-brand-600">
-            Amount to Pay
+            Jumlah Bayar
           </Text>
           <Text className="text-lg font-black text-brand-600">
             {formatRupiah(grandTotal)}
@@ -82,12 +82,12 @@ export default function Payment() {
           >
             <ShieldCheck color="#fff" size={18} />
             <Text className="text-sm font-bold text-white">
-              Simulate Cashless Success
+              Simulasikan Pembayaran Berhasil
             </Text>
           </Pressable>
           <Pressable onPress={() => router.back()} className="items-center py-2">
             <Text className="text-sm font-semibold text-slate-500">
-              Abort Order
+              Batalkan Pesanan
             </Text>
           </Pressable>
         </View>

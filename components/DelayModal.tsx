@@ -62,7 +62,7 @@ export function DelayModal() {
             </View>
             <View className="flex-1">
               <Text className="text-base font-extrabold text-slate-900">
-                Your order will be late
+                Pesananmu akan terlambat
               </Text>
               <Text className="mt-0.5 text-xs font-medium text-slate-500">
                 Kantin sedang ramai dari biasanya
@@ -74,7 +74,7 @@ export function DelayModal() {
           <View className="flex-row items-center justify-between rounded-2xl border border-amber-100 bg-amber-50 px-4 py-3">
             <View>
               <Text className="text-xs font-semibold uppercase tracking-wider text-amber-700">
-                New Estimate
+                Estimasi Baru
               </Text>
               <Text className="mt-0.5 text-2xl font-black tracking-tight text-amber-800">
                 {formatClock(info.newAt)}
